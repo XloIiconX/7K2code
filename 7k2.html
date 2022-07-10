@@ -15,16 +15,15 @@
 </head>
 
 <body>
-    <p><span>user id : </span><input type="text" id="uid"></p>
-    <p><button onclick="req();">run</button></p>
-    <p><a target="_blank" rel="noopener noreferrer" href="https://forum.netmarble.com/sk2_en/view/12/6247">how to find UID</a></p>
+    <p><span>user id : </span><input type="text" id="uid">
+    <button onclick="req();">run</button>
+    <a target="_blank" rel="noopener noreferrer" href="https://forum.netmarble.com/sk2_en/view/12/6247">how to find UID</a></p>
     <hr>
     <p><span>Put your UID in and Click RUN</span></p>
     <p><span>Coupon Code Editable.</span></p>
     <p><span>Saving Member Information Cookies.</span></p>
-    <p><br></p>
-    <p><a href="https://yelus12.github.io/sena/?fbclid=IwAR0CLhWITXjUaR2IHwpxaSGiXVPHjwG_l0pCPjj6sZQiWJjQat9mdDl9uUg" rel="noopener noreferrer" target="_blank">Credit KR ver</a></p>
-    <p><a href="https://www.facebook.com/groups/sevenknights2thailandcommunity/permalink/487379399857257" rel="noopener noreferrer" target="_blank">code: Thai community</a></p>
+    <p><a href="https://yelus12.github.io/sena/?fbclid=IwAR0CLhWITXjUaR2IHwpxaSGiXVPHjwG_l0pCPjj6sZQiWJjQat9mdDl9uUg" rel="noopener noreferrer" target="_blank">Credit KR ver</a>
+    <a href="https://www.facebook.com/groups/sevenknights2thailandcommunity/permalink/487379399857257" rel="noopener noreferrer" target="_blank">code: Thai community</a></p>
     <div id="example-table"><br></div>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -133,15 +132,15 @@
                             tabledata[i]['result'] = 1
                             tabledata[i]['description'] = data['rewardItem']['rewardTitle']
                         } else if (data['resultCode'] === 'NOT_EXISTS_PID') {
-                            tabledata[i]['description'] = '회원번호 오류'
+                            tabledata[i]['description'] = 'UID Error'
                         } else if (data['resultCode'] === 'COUPON_ALREADY_USE') {
-                            tabledata[i]['description'] = '이미 사용한 쿠폰'
+                            tabledata[i]['description'] = 'USED COUPON'
                         } else if (data['resultCode'] === 'COUPON_WRONG') {
-                            tabledata[i]['description'] = '잘못된 쿠폰 코드'
+                            tabledata[i]['description'] = 'WRONG COUPON'
         			} else if (data['resultCode'] === 'COUPON_RESTRICT') {
-                            tabledata[i]['description'] = '쿠폰입력 연속 실패. 1시간 후 입력 가능.'
+                            tabledata[i]['description'] = 'COUPON ERROR TRY AGAIN IN 1HR.'
                         } else {
-                            tabledata[i]['description'] = '나도 모르는 응답코드'
+                            tabledata[i]['description'] = 'UNKNOWN'
                         }
                         tabledata[i]['response'] = data['resultCode']
                         table.updateData(tabledata)
@@ -192,12 +191,11 @@
                     editor: false
                 },
                 { title: "response", field: "response", width: 180, editor: false },
-                { title: "설명", field: "description", width: 300, editor: false },
+                { title: "exp", field: "description", width: 300, editor: false },
             ],
         });
     </script>
 
-<div style="color: red">Created with <a href="https://wordtohtml.net/">WordToHTML.net</a> trial.</div>
 </body>
 
 </html>
